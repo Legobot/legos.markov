@@ -13,7 +13,7 @@ setup(
     namespace_packages=name.split('.')[:-1],
     license='MIT',
     description=description,
-    author='Nitrax',
+    author='fraq',
     url='https://github.com/Legobot/' + name,
     install_requires=['legobot>=1.1.4,<=2.0.0',
                       'markovify',
