@@ -7,10 +7,6 @@ python:
   - 3.6-dev
   - pypy
 
-matrix:
-  allow_failures:
-    - python: 3.7-dev nightly
-
 script:
   - bandit -r legos/markov.py
   - flake8 legos/markov.py
