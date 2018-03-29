@@ -55,7 +55,7 @@ class MarkovGenerator(Lego):
         except IndexError as e:
             err = "MarkovGenerator called without specifying a user.\
                 Usage: !markov username"
-            logger.error(err)
+            logger.error(e)
             self.reply(message, err, opts)
         if self.r.exists(key):
             model = self.make_model(key)
