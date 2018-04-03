@@ -20,7 +20,7 @@ class MarkovListener(Lego):
     def handle(self, message):
         # Exclude bot commands from model input
         if not message['text'].startswith("!"):
-            self.append_text(message['metadata']['source_username'],
+            self.append_text(message['metadata']['display_name'],
                              message['text'])
 
     def append_text(self, user, text):
