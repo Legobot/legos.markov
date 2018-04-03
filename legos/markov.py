@@ -30,12 +30,11 @@ class MarkovListener(Lego):
 
     @staticmethod
     def get_name():
-        return "MarkovListener"
+        return None
 
     @staticmethod
     def get_help():
-        return "Passive listener that logs input data for MarkovGenerator"
-
+        return None
 
 class MarkovGenerator(Lego):
     def __init__(self, baseplate, lock, redis, *args, **kwargs):
@@ -89,9 +88,10 @@ class MarkovGenerator(Lego):
                              {}\n{}".format(msg, e))
         return combined_model
 
-    def name(self):
-        return "MarkovGenerator"
+    @staticmethod
+    def get_name(self):
+        return None
 
-    def help(self):
-        return "Generate a markov chained sentence based on a user's chat \
-        history. Usage: !markov username"
+    @staticmethod
+    def get_help(self):
+        return None
