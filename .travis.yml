@@ -22,4 +22,3 @@ deploy:
     distributions: "sdist bdist_wheel"
 	repo: Legobot/legos.markov
 	branch: master
-
