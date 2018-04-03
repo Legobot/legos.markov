@@ -17,8 +17,8 @@ deploy:
   user: briggsb
   password:
     secure: SUEYVm9lG18BHHcRwQOFyX2lY4AitIPGPHQWJR78/IP+SFgkPEmMnG0YF6PvJ45eT3dZz6Y896Nz7QQCEFHfCPHqOoPzaMLB1InkcPG9mbo/C07tuwQXF/O6Wi5IPzwHNAYAXlXx7i5zj/TDxwJ6FtqVep9CoXTZvdpUyVZk/FXSOH3aOjLhjQ+nrMxXHgA7JM90XyVUcBGOJ9397496ESsiazQRL0xF2mpiPZwULhHpaqjvIfLpTcJQE2ICeYMBeKm1jaUQLeslhmh2fNDn5b0ZmgSkkxEpLy1YIVfqQvImytmUC310+yUg+lVMHl5WdmcxwzMrIk2EwiVEsgDtpN6ZGlMIrgvdoG+Vd3gfRc5Mducu3y91Ihu4aYxJPKvvGL+RtrCAoDV73VlaD36N9ELPKJ1ul6MxSEYCCEuHyaqU+W2KgKQ7QRfb/3Vj2o/p/bBDVurOX8+Fvo0OyXeWtUTY2GU2ONsD/MevdggfH4qw1es6yTbnK40v526EdDQKxO0wuPVwi2DYANrOcz4tYDTHqsp74IQez/iu0krZ36c3ntWH+ZqyF6zoyvOOJW2lc3ZPjfCrF7GcJx/QW2LSBf1os00dCpTKUnd41E6U64PH97dievCE0TDCNL9tX/QmiZT+QBQkBwjU1KN3Fa/G7Z/c/Eq5RuG5RwxwW1N7JRs=
-  on: 
+  on:
     tags: true
     distributions: "sdist bdist_wheel"
-	repo: Legobot/legos.markov
-	branch: master
+    repo: Legobot/legos.markov
+    branch: master
