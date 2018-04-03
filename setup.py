@@ -9,13 +9,13 @@ description = 'Lego for organizing text and generating markoved responses'
 name = 'legos.markov'
 setup(
     name=name,
-    version='0.1.0',
+    version='0.1.1',
     namespace_packages=name.split('.')[:-1],
     license='MIT',
     description=description,
     author='fraq',
     url='https://github.com/Legobot/' + name,
-    install_requires=['legobot>=1.1.4,<=2.0.0',
+    install_requires=['legobot>=1.2.1,<=2.0.0',
                       'markovify',
                       'nltk'
                       ],
