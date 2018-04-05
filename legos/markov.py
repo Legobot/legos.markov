@@ -25,8 +25,7 @@ class MarkovListener(Lego):
 
     def append_text(self, user, text):
         key = "text/" + user
-        resp = self.r.rpush(key, text)
-        logger.debug(resp)
+        self.r.rpush(key, text)
 
     @staticmethod
     def get_name():
@@ -71,6 +70,7 @@ class MarkovGenerator(Lego):
 
     def make_model(self, key):
         combined_model = None
+        logger.info("Markov requested for {}".format(key))
         for msg in self.r.lrange(key, 0, -1):
             try:
                 msg = " ".join(self.t.tokenize(msg)) + "."
@@ -86,5 +86,5 @@ class MarkovGenerator(Lego):
         return combined_model
 
     @staticmethod
-    def get_name(self):
+    def get_name():
         return None
