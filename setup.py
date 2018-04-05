@@ -9,7 +9,7 @@ description = 'Lego for organizing text and generating markoved responses'
 name = 'legos.markov'
 setup(
     name=name,
-    version='0.1.2',
+    version='0.1.3',
     namespace_packages=name.split('.')[:-1],
     license='MIT',
     description=description,
