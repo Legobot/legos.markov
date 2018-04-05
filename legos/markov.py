@@ -25,7 +25,7 @@ class MarkovListener(Lego):
 
     def append_text(self, user, text):
         key = "text/" + user
-        resp = self.r.rpush(key, text)
+        self.r.rpush(key, text)
 
     @staticmethod
     def get_name():
