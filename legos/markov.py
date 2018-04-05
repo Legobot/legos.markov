@@ -86,5 +86,5 @@ class MarkovGenerator(Lego):
         return combined_model
 
     @staticmethod
-    def get_name(self):
+    def get_name():
         return None
