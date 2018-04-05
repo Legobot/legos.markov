@@ -32,10 +32,6 @@ class MarkovListener(Lego):
     def get_name():
         return None
 
-    @staticmethod
-    def get_help():
-        return None
-
 
 class MarkovGenerator(Lego):
     def __init__(self, baseplate, lock, redis, *args, **kwargs):
@@ -91,8 +87,4 @@ class MarkovGenerator(Lego):
 
     @staticmethod
     def get_name(self):
-        return None
-
-    @staticmethod
-    def get_help(self):
         return None
