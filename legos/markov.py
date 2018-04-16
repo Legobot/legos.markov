@@ -67,6 +67,14 @@ class MarkovGenerator(Lego):
                          % str(message))
 
     def make_full_model(self):
+        '''
+        Creates a model using every key in text/ in redis.
+        Effectively just a combination of each individual user's history.
+
+        Returns:
+            markovify.Text
+        '''
+
         combined_model = None
         for key in self.r.keys("text/"):
             model = self.make_user_model(key)
@@ -78,6 +86,16 @@ class MarkovGenerator(Lego):
         return combined_model
 
     def make_user_model(self, key):
+        '''
+        Make a markov model of a single user's chat history.
+
+        Args:
+            key (string): username to markovify
+
+        Returns:
+            markovify.Text
+        '''
+
         combined_model = None
         logger.info("Markov requested for {}".format(key))
         for msg in self.r.lrange(key, 0, -1):
