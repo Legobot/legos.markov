@@ -51,11 +51,10 @@ class MarkovGenerator(Lego):
                 model = self.make_user_model(key)
                 self.reply(message, model.make_sentence(), opts)
             else:
-                self.reply(message, "No data exists for that user. Sorry.", opts)
+                self.reply(message, "No data exists for that user.", opts)
         else:
             model = self.make_full_model()
             self.reply(message, model.make_sentence(), opts)
-
 
     @staticmethod
     def set_opts(message):
@@ -69,7 +68,7 @@ class MarkovGenerator(Lego):
 
     def make_full_model(self):
         combined_model = None
-        for key in r.keys("text/"):
+        for key in self.r.keys("text/"):
             model = self.make_user_model(key)
             if combined_model:
                 combined_model = markovify.combine(
