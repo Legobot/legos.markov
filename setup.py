@@ -2,14 +2,14 @@
 
 from setuptools import setup, find_packages
 
-__author__ = "fraq <briggs.brenton@gmail.com>"
+__author__ = "fraq <code@fraq.io>"
 __copyright__ = "Copyright 2018, Legobot"
 
 description = 'Lego for organizing text and generating markoved responses'
 name = 'legos.markov'
 setup(
     name=name,
-    version='0.1.3',
+    version='0.1.4',
     namespace_packages=name.split('.')[:-1],
     license='MIT',
     description=description,

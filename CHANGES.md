@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [UNRELEASED] [0000-00-00]
+## [0.1.4] [2016-04-16]
 #### Added
  - Feature: generate a markov chain from all collected text by using `!markov`
 
