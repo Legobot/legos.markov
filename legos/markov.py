@@ -45,18 +45,17 @@ class MarkovGenerator(Lego):
 
     def handle(self, message):
         opts = self.set_opts(message)
-        try:
+        if len(message['text'].split()) > 1:
             key = "text/" + message['text'].split()[1]
-        except IndexError as e:
-            err = "MarkovGenerator called without specifying a user.\
-                Usage: !markov username"
-            logger.error(e)
-            self.reply(message, err, opts)
-        if self.r.exists(key):
-            model = self.make_model(key)
-            self.reply(message, model.make_sentence(), opts)
+            if self.r.exists(key):
+                model = self.make_user_model(key)
+                self.reply(message, model.make_sentence(), opts)
+            else:
+                self.reply(message, "No data exists for that user. Sorry.", opts)
         else:
-            self.reply(message, "No data exists for that user. Sorry.", opts)
+            model = self.make_full_model()
+            self.reply(message, model.make_sentence(), opts)
+
 
     @staticmethod
     def set_opts(message):
@@ -68,7 +67,18 @@ class MarkovGenerator(Lego):
             logger.error('Could not identify message source in message: %s'
                          % str(message))
 
-    def make_model(self, key):
+    def make_full_model(self):
+        combined_model = None
+        for key in r.keys("text/"):
+            model = self.make_user_model(key)
+            if combined_model:
+                combined_model = markovify.combine(
+                    models=[combined_model, model])
+            else:
+                combined_model = model
+        return combined_model
+
+    def make_user_model(self, key):
         combined_model = None
         logger.info("Markov requested for {}".format(key))
         for msg in self.r.lrange(key, 0, -1):
